@@ -16,10 +16,9 @@ API End points:
       1. Import Resource from flask_restful.
       2. Create a class named "Register" and pass the "Resoure" as an argument to the class.
       3. Create a variable called user_post_args and pass the value "reqparse.RequestParser()" so that the class is initialised on to the variable.
-      4. Use the method "add_argument" onto the user_post_args and pass the necessary attributes such as name, email, password and role as in seperate line 
-      and mention the keyword, "required=True" so that every attribute must be filled in order to register a user
+      4. Use the method "add_argument" onto the user_post_args and pass the necessary attributes such as name, email, password and role as in seperate line and                 mention the keyword, "required=True" so that every attribute must be filled in order to register a user
       5. Use the POST method under the class, 'Register'. Parse the arguments under user_post_args onto args variable.
-      6. Use filter_by method as a query to our User Model Database to check if the email provided already exists and if so, pass the argument for the same and abort the function.
+      6. Use filter_by method as a query to our User Model Database to check if the email provided already exists and if so, pass the argument for the same and abort           the function.
       7. Else, pass the name, email, role as a key value pair or jsons to the args variable.
       8. use hash_password method to encrypt the password provided as a security measure.
       9. Add the new_user to our database.
@@ -30,8 +29,7 @@ API End points:
       2. Use the POST method under the class and initialise a variable login_args by passing reqparse.RequestParser() module.
       3. Use add_argument method and pass the email and password provided by the user onto login_args seperately.
       4. Parse the given arguments onto the variable args using parse_args method.
-      5. use filter_by query on our database to check if the user provides a valid registered email and check the matching password for the provided email using
-      verify_password function that we defined in our database model. if these cases do not satisfy abort the request and return "Invalid Credentials" message.
+      5. use filter_by query on our database to check if the user provides a valid registered email and check the matching password for the provided email using        verify_password function that we defined in our database model. if these cases do not satisfy abort the request and return "Invalid Credentials" message.
       6. If the user credentials are valid, create a JWT from create_access_token function inherited from lask_jwt_extended module.
       7. Return the JWT 
 
